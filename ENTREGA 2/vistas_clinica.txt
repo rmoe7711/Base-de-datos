@@ -1,0 +1,31 @@
+desc pacientes
+desc examenes;
+desc tratamientos;
+desc traslados;
+
+CREATE VIEW paciente_examen (nombre_paciente,tipo_sangre,nombre_laboratorio,resultados) 
+ AS SELECT nombre_paciente,tipo_sangre,nombre_laboratorio,resultados
+ FROM pacientes INNER JOIN examenes ON pacientes.DPI = examenes.DPI
+; 
+
+CREATE VIEW paciente_tratamiento (nombre_paciente,sexo,receta,observaciones)
+AS SELECT nombre_paciente,sexo,receta,observaciones
+ FROM pacientes INNER JOIN tratamientos ON pacientes.DPI = tratamientos.DPI
+;
+CREATE VIEW paciente_traslado (nombre_paciente,direccion_paciente,lugar_de_traslado,fecha_traslado)
+AS SELECT nombre_paciente,direccion_paciente,lugar_de_traslado,fecha_traslado
+ FROM pacientes INNER JOIN traslados ON pacientes.DPI = traslados.DPI
+;
+
+create view cuatro (nombre_paciente,receta,detalle_diagnostico,cita_actual)
+AS SELECT nombre_paciente,receta,detalle_diagnostico,cita_actual FROM pacientes INNER JOIN
+tratamientos ON pacientes.DPI = tratamientos.DPI INNER JOIN diagnostico ON pacientes.DPI = diagnostico.DPI
+INNER JOIN citas ON pacientes.DPI = citas.DPI
+;
+
+
+
+SELECT *FROM paciente_examen;
+SELECT *FROM paciente_tratamiento;
+SELECT *FROM paciente_traslado;
+SELECT *FROM cuatro;

@@ -1,0 +1,5 @@
+http://www.ajpdsoft.com/modules.php?name=News&file=article&sid=559    // activar y desactivar el archive  log
+http://www.orasite.com/backup-de-base-de-datos/guia-rapida-para-rman   // guia rapida para RMAN
+https://www.youtube.com/watch?v=Psncnv2QT50    //COPIA DE SGURIDAD UTILIZANDO RMAN (EN CALIENTE) ORACLE DATABASE 11g EE
+
+http://www.ajpdsoft.com/modules.php?name=News&file=article&sid=560     // backup con oracle enterprise manager 11g
